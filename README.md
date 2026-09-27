@@ -72,7 +72,21 @@ git clone [https://github.com/](https://github.com/)<your-username>/leakage-awar
 cd leakage-aware-privacy-policy-classification
 pip install -r requirements.txt
 
----
+Reproducing the Experiments
+
+Exploratory Data Analysis & Splitting: Run notebooks/privacy_policy_classification.ipynb or call:
+
+python -m src.splits --data_path data/raw/privacy_policy_dataset.csv
+Train Classical and Recurrent Grids: Execute 60 hyperparameter runs across random and policy-disjoint schemes.
+
+Fine-Tune & Checkpoint Policy-Disjoint BERT:
+
+python -m src.models.transformer --mode train --freeze_layers 10 --lr 3e-5 --batch_size 32
+
+Bangladeshi Corporate Transfer Inference:
+
+python -m src.inference_bd --checkpoint checkpoints/bert_policy_disjoint --input_urls data/raw/bd_company_index_100.csv
+
 
 ## ⚠️ Documented Limitations
 Padding without Length Masking: Recurrent architectures evaluated padded tokens through sequence caps (48 tokens), contributing to higher variance.
