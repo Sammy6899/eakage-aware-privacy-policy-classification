@@ -71,3 +71,17 @@ Evaluated on 3,120 extracted sentences across 26 usable websites representing 10
 git clone [https://github.com/](https://github.com/)<your-username>/leakage-aware-privacy-policy-classification.git
 cd leakage-aware-privacy-policy-classification
 pip install -r requirements.txt
+
+---
+
+## ⚠️ Documented Limitations
+Padding without Length Masking: Recurrent architectures evaluated padded tokens through sequence caps (48 tokens), contributing to higher variance.
+
+Scraper Attrition: 26% of targeted Bangladeshi corporate policies failed collection due to JavaScript single-page application (SPA) rendering, representing a slight selection bias.
+
+Tier 1 Unsupervised Transfer: Bangladeshi external evaluation is descriptive; no manual gold-standard ground truth exists for Bangladeshi policies in this iteration.
+
+---
+
+## 📄 License & Attribution
+This repository is distributed under the MIT License. The OPP-115 corpus is credited to Wilson et al. (2016)[cite: 7]. Project completed as part of undergraduate coursework at BRAC University[cite: 7].
