@@ -61,29 +61,16 @@ Evaluated on 3,120 extracted sentences across 26 usable websites representing 10
 | **User Access, Edit & Deletion**   |            3.97%           |            2.60%           |   -1.37%   |          0.673          | Underrepresented self-serve controls                                                             |
 | **Int'l & Specific Audiences**     |            3.05%           |            2.63%           |   -0.42%   |          0.640          | Preserved low-prevalence tail                                                                    |
 
-
 ---
 
-## 🛠️ Repository Pipeline & Setup
+## 🚀 Getting Started 💻
 
-### Installation
+### 1️⃣ Clone the Repository
 ```bash
 git clone [https://github.com/](https://github.com/)<your-username>/leakage-aware-privacy-policy-classification.git
 cd leakage-aware-privacy-policy-classification
 pip install -r requirements.txt
-
-Reproducing the Experiments
-# 1. Exploratory Data Analysis & Splitting:
-python -m src.splits --data_path data/raw/privacy_policy_dataset.csv
-
-# 2. Train Classical and Recurrent Grids:
-# Executes 60 hyperparameter tuning runs across both random and policy-disjoint schemes
-
-# 3. Fine-Tune & Checkpoint Policy-Disjoint BERT:
-python -m src.models.transformer --mode train --freeze_layers 10 --lr 3e-5 --batch_size 32
-
-# 4. Bangladeshi Corporate Transfer Inference:
-python -m src.inference_bd --checkpoint checkpoints/bert_policy_disjoint --input_urls data/raw/bd_company_index_100.csv
+```
 
 ## ⚠️ Documented Limitations
 Padding without Length Masking: Recurrent architectures evaluated padded tokens through sequence caps (48 tokens), contributing to higher variance.
