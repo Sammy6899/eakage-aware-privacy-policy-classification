@@ -83,5 +83,12 @@ Tier 1 Unsupervised Transfer: Bangladeshi external evaluation is descriptive; no
 
 ---
 
+## 👤 Author & Acknowledgments
+
+- **Developer:** Samiha Tasnim Orthi, Nafiz Ahmed Nafi, Amirul Islam Sadat, Priom Halder
+- **Course:** CSE440 - Natural Language Processing II (NLP)
+
+---
+
 ## 📄 License & Attribution
-This repository is distributed under the MIT License. The OPP-115 corpus is credited to Wilson et al. (2016)[cite: 7]. Project completed as part of undergraduate coursework at BRAC University[cite: 7].
+This repository is distributed under the MIT License. The OPP-115 corpus is credited to Wilson et al. (2016). Project completed as part of undergraduate coursework at BRAC University.
