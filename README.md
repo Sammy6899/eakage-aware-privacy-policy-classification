@@ -73,20 +73,17 @@ cd leakage-aware-privacy-policy-classification
 pip install -r requirements.txt
 
 Reproducing the Experiments
-
-Exploratory Data Analysis & Splitting: Run notebooks/privacy_policy_classification.ipynb or call:
-
+# 1. Exploratory Data Analysis & Splitting:
 python -m src.splits --data_path data/raw/privacy_policy_dataset.csv
-Train Classical and Recurrent Grids: Execute 60 hyperparameter runs across random and policy-disjoint schemes.
 
-Fine-Tune & Checkpoint Policy-Disjoint BERT:
+# 2. Train Classical and Recurrent Grids:
+# Executes 60 hyperparameter tuning runs across both random and policy-disjoint schemes
 
+# 3. Fine-Tune & Checkpoint Policy-Disjoint BERT:
 python -m src.models.transformer --mode train --freeze_layers 10 --lr 3e-5 --batch_size 32
 
-Bangladeshi Corporate Transfer Inference:
-
+# 4. Bangladeshi Corporate Transfer Inference:
 python -m src.inference_bd --checkpoint checkpoints/bert_policy_disjoint --input_urls data/raw/bd_company_index_100.csv
-
 
 ## ⚠️ Documented Limitations
 Padding without Length Masking: Recurrent architectures evaluated padded tokens through sequence caps (48 tokens), contributing to higher variance.
@@ -105,4 +102,4 @@ Tier 1 Unsupervised Transfer: Bangladeshi external evaluation is descriptive; no
 ---
 
 ## 📄 License & Attribution
-This repository is distributed under the MIT License. The OPP-115 corpus is credited to Wilson et al. (2016). Project completed as part of undergraduate coursework at BRAC University.
+The OPP-115 corpus is credited to Wilson et al. (2016). Project completed as part of undergraduate coursework at BRAC University.
